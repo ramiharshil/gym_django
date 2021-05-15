@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Update Client</title>
+    <script>
+        function f() {
+            let packages = document.querySelector(packages);
+            let startd = {{ clients.packages }}
+            packages.value = startd.toString().substr(0,10)
+        }
+    </script>
+</head>
+<body>
+<form action="{% url 'edit' clients.id %}" method="post">
+    {% csrf_token %}
+    NAME: <input type="text" name="Name" id="name"  placeholder="Full Name" value="{{ clients.name }}"> <br><br>
+    PACKAGE PER.<input type="text" name="packagep" id="packagep" placeholder="Package life" value="{{ clients.packagep }}"><br><br>
+    START DATE<input type="date" name="packages" id="packages" placeholder="Start Date" value="{{ clients.packages }}"><br><br>
+    END DATE<input type="date" name="packagee" id="packagee" placeholder="End Date" value="{{ clients.packagee }}"><br><br>
+    {{ clients.packages }}
+    <H2>FEE STATUS</H2>
+    <lable>
+        {{ clients.feesp }}
+    </lable>
+    <br><br>
+        <H2>TRANNING TYPE</H2><br><br>
+{#        {{ form }}#}
+        <input type="submit" value="Edit">
+</form>
+</body>
+</html>

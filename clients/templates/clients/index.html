@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clients-Details</title>
+</head>
+<body>
+    <form action="{% url 'addclients' %}" method="post">
+        {% csrf_token %}
+       NAME: <input type="text" name="Name" id="name" placeholder="Full Name"> <br><br>
+        AGE: <input type="number" name="Age" id="age" placeholder="Age"><br>
+        <H4>GENDER</H4>
+        MALE:<input type="radio" name="gender" id="gender" value="Male">
+        FEMALE:<input type="radio" name="gender" id="gender" value="Female"><br><br>
+        DateOfBirth:<input type="date" name="dob" id="dob" placeholder="DateOfBirth"><br><br>
+        EMAIL:<input type="email" name="email" id="email" placeholder="Clients Email"><br><br>
+        MOBILE NO.:<input type="text" name="moblieno" id="moblieno" placeholder="Clients No."><br><br>
+        ADDRESS:<input type="text" name="address" id="address" placeholder="Address"><br><br>
+        DISEASES:<input type="text" name="diseases" id="diseases" placeholder="Any diseases"><br><br>
+        PACKAGE PER.<input type="text" name="packagep" id="packagep" placeholder="Package life" value="{{ package }}"><br><br>
+        START DATE<input type="date" name="packages" id="packages" placeholder="Start Date"><br><br>
+        END DATE<input type="date" name="packagee" id="packagee" placeholder="End Date"><br><br>
+        <H2>FEE STATUS</H2>
+        PAID<input type="radio" name="feesp" id="feesp" value="Paid">
+        NOT PAID<input type="radio" name="feesp" id="feesp" value="Not Paid"><br><br>
+        <H2>TRANNING TYPE</H2>
+        BASIC:<input type="radio" name="tranningtype" id="tranningtype" value="Basic">
+        PT:<input type="radio" name="tranningtype" id="tranningtype" value="Personal Tranning">
+        PPT:<input type="radio" name="tranningtype" id="tranningtype" value="Partner Personal Tranning">
+        GPT:<input type="radio" name="tranningtype" id="tranningtype" value="Group Personal Tranning"><br><br>
+{#        {{ form }} <br><br>#}
+        <input type="submit" value="Add Client">
+
+    </form>
+
+{% for message in messages %}
+    {{ message }}
+{% endfor %}
+</body>
+</html>

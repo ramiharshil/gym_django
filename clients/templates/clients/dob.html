@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clients Birthday</title>
+    <style>
+       table,td,th {
+           text-align: center;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+<br><br>
+{{ cldbs }}<br><br>
+{#{{ month }}<br><br>#}
+{#{{ dobs }}#}
+{#{{ client }}#}
+{% if dobs %}
+    <table>
+        <thead>
+        <tr><th>NAME</th><th>DateOfBirth</th></tr>
+        </thead>
+        <tbody>
+        {% for dob in dobs %}
+            <tr><td>{{ dob.name }}</td> <td>{{ dob.dob }}</td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <h1>No Birthday Today</h1>
+{% endif %}
+{#    {% if dobs  %}#}
+{#        <table>#}
+{#        <thead>#}
+{#        <tr><th>NAME</th><th>AGE</th><th>GENDER</th><th>EMAIL</th><th>MOBILE-NO.</th></tr>#}
+{#        </thead>#}
+{#        <tbody>#}
+{#        {% for viewclient in viewclients %}#}
+{#            <tr><td>{{ viewclient.name }}</td> <td>{{ viewclient.age }}</td> <td>{{ viewclient.gender }}</td>#}
+{#            <td>{{ viewclient.email }}</td> <td>{{ viewclient.moblieno }}</td></tr>#}
+{#        {% endfor %}#}
+{#        </tbody>#}
+{#        </table>#}
+{#    {% else %}#}
+{#        <h1>No Birthdays </h1>#}
+{#    {% endif %}#}
+
+</body>
+</html>
